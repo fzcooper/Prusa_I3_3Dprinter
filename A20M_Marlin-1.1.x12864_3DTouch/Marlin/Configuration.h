@@ -548,7 +548,7 @@
  *                                      X, Y, Z, E0 [, E1[, E2[, E3[, E4]]]]
  */
 // Bondtech recommends 415 steps per mm
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80.3, 80.8, 400, 415 }   //Orig { 80, 80, 4000, 500 } 93*2 = DRV8825 1/32 Stepps
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80.3, 80.8, 400, 411.72 }   //Orig { 80, 80, 4000, 500 } 93*2 = DRV8825 1/32 Stepps
 
 /**
  * Default Max Feed Rate (mm/s)
