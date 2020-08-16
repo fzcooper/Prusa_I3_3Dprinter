@@ -546,7 +546,8 @@
  * Override with M92
  *                                      X, Y, Z, E0 [, E1[, E2[, E3[, E4]]]]
  */
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80.3, 80.8, 400, 93 }   //Orig { 80, 80, 4000, 500 } 93*2 = DRV8825 1/32 Stepps
+// Bondtech recommends 415 steps per mm
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80.3, 80.8, 400, 415 }   //Orig { 80, 80, 4000, 500 } 93*2 = DRV8825 1/32 Stepps
 
 /**
  * Default Max Feed Rate (mm/s)
@@ -765,9 +766,10 @@
 // @section machine
 
 // Invert the stepper direction. Change (or reverse the motor connector) if an axis goes the wrong way.
-#define INVERT_X_DIR  true//true
-#define INVERT_Y_DIR  true
-#define INVERT_Z_DIR  false//true
+// Installed TMC2208s (in legacy mode) on the X, Y, Z axes
+#define INVERT_X_DIR  false
+#define INVERT_Y_DIR  false
+#define INVERT_Z_DIR  true
 
 // Enable this option for Toshiba stepper drivers
 //#define CONFIG_STEPPERS_TOSHIBA
@@ -775,6 +777,8 @@
 // @section extruder
 
 // For direct drive extruder v9 set to true, for geared extruder set to false.
+// Installed TMC2208s (in legacy mode) on the E0 axis, inverting direction
+// Installed BMG clone on the E0 axis, inverting direction again
 #define INVERT_E0_DIR true
 #define INVERT_E1_DIR false
 #define INVERT_E2_DIR false
